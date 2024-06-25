@@ -1,0 +1,157 @@
+/* * {
+    border: solid 1px red;
+} */
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+    background-color: #1f2937;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 300px 0px 300px;
+    /* border: solid 1px red; */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.logo h2 {
+    margin: 0px;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+    list-style-type: none;
+}
+
+.header a {
+    color: #e5e7eb;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+.footer {
+    background-color: #1f2937;
+    display: flex;
+    justify-content: center;
+}
+.footer-content {
+    color: #e5e7eb;
+    
+}
+
+.left {
+    /* border: solid 1px red; */
+}
+.logo {
+    color: #e5e7eb;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.content {
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.box {
+
+    display: flex;
+    flex:1;
+}
+
+
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2937;
+    gap: 20px;
+}
+
+
+
+
+.two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.two .child-one {
+    text-align: center;
+    padding-right: 300px ;
+}
+
+.two .child-one h2 {
+    font-size: 36px;
+}
+
+.two .child-two {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    max-width: 150px;
+    
+}
+
+.card {
+    display: flex;
+    flex: 1;
+    border: solid 4px #3882f6;
+    min-height: 144px;
+    border-radius:10px;
+    align-self: stretch;
+    
+
+    
+}
+
+.text {
+    text-align: left ;
+    flex: 1;
+}
+
+
+.card img {
+    height: 100%;
+    width: 100%;
+  }
+  
+
+.winner {
+    display: flex;
+    justify-content: center;
+}
+
+
+.computer-choise {
+    margin-left: 100px;
+}

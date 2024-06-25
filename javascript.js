@@ -2,7 +2,8 @@ let computerChoise;
 let humanChoise;
 
 
-playGame();
+// playGame();
+
 
 
 function playGame(){
@@ -89,3 +90,8 @@ function getHumanChoice() {
     }
     return humanChoise;
 }
+
+
+
+
+
