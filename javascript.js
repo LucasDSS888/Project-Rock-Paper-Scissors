@@ -1,100 +1,44 @@
-let computerChoise;
+
 let humanChoise;
-let humanChoiseNumb = humanChoiseImgClick();
-
-
-// playGame();
-
-
-
-
-
-
-// getHumanChoice();
+let humanChoiseNumb;
+let num;
+let humanScore = 0;
+let computerScore = 0;
 
 
 
 
-function humanChoiseImgClick() {
-    
-    let num;
-
-    const choiseAP = document.querySelector(".card.alexP");
-    choiseAP.addEventListener("click", () => {
-        num = 2;
-        alert(num);
-    });
-    
-    const choiseAR = document.querySelector(".card.alexR");
-    choiseAR.addEventListener("click", () => {
-        num = 1;
-        alert(num);
-    });
-
-    const choiseAS = document.querySelector(".card.alexS");
-    choiseAS.addEventListener("click", () => {
-        num = 3;
-        alert(num);
-    });
-
-    return num;
-
-}
-
-alert(humanChoiseNumb);
-
-
-
-
-function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    
-    
-    
-    function playRound(humanChoise, computerChoise) {
-        humanChoise = getHumanChoice();
-        computerChoise = getComputerChoice();
-        if (humanChoise != 'Invalid value') {
-            if(computerChoise == 'rock' && humanChoise == 'scissors') {
-                computerScore++;
-                console.log("You lose!! Rock beats scissors");
-            }else if(computerChoise == 'paper' && humanChoise == 'rock') {
-                computerScore++;
-                console.log("You lose!! Paper beats rock");
-            }else if(computerChoise == 'scissors' && humanChoise == 'paper') {
-                computerScore++;
-                console.log("You lose!! Scissors beats paper");
-            }else if(humanChoise == 'rock' && computerChoise == 'scissors') {
-                humanScore++;
-                console.log("You Win!! Rock beats scissors");
-            }else if(humanChoise == 'paper' && computerChoise == 'rock') {
-                humanScore++;
-                console.log("You Win!! Paper beats rock");
-            }else if(humanChoise == 'scissors' && computerChoise == 'paper') {
-                humanScore++;
-                console.log("You Win!! Scissors beats paper");
-            }else {
-                console.log('Draw');
-            }
-            console.log(`Human:${humanScore} vs Computer:${computerScore}`)
+function winner(humanChoise, computerChoise) {
+        if(computerChoise == 'rock' && humanChoise == 'scissors') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/girl1.png';
+            return 'computer';
+        }else if(computerChoise == 'paper' && humanChoise == 'rock') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/girl1.png';
+            return 'computer';
+        }else if(computerChoise == 'scissors' && humanChoise == 'paper') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/girl1.png';
+            return 'computer';
+        }else if(humanChoise == 'rock' && computerChoise == 'scissors') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/alex1.png';
+            return 'human';
+        }else if(humanChoise == 'paper' && computerChoise == 'rock') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/alex1.png';
+            return 'human';
+        }else if(humanChoise == 'scissors' && computerChoise == 'paper') {
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/alex1.png';
+            return 'human';
         }else {
-            alert('Try another value');
+            const image = document.querySelector('.cWinner');
+            image.src = './alex/DRAW.png';
+            return 'draw';
         }
-        
-        
     }
-}
-
-
-
-
 
 function getComputerChoice() {
     let rock = 'rock';
@@ -120,24 +64,35 @@ function getComputerChoice() {
     return choise;
 }
 
-function getHumanChoice() {
-
-    let humanChoise;
-
-    if (humanChoiseNumb == 1) {
-        humanChoise = 'rock';
-        alert('aeee');
-    }else if(humanChoiseNumb == 2) {
-        humanChoise = 'paper';
-    }else if(humanChoiseNumb == 3) {
-        humanChoise = 'scissors';
-    }else {
-          alert('aff')
-    }
-    return humanChoise;
-}
 
 
+const choiseAP = document.querySelector(".card.alexP");
+choiseAP.addEventListener("click", () => {
+    humanChoise = 'paper';
+    let computerChoise = getComputerChoice();
+    winner(humanChoise, computerChoise);
+});
+    
+const choiseAR = document.querySelector(".card.alexR");
+choiseAR.addEventListener("click", () => {
+    humanChoise = 'rock';;
+    let computerChoise = getComputerChoice();
+    winner(humanChoise, computerChoise);
+ });
 
+const choiseAS = document.querySelector(".card.alexS");
+choiseAS.addEventListener("click", () => {
+    humanChoise = 'scissors';
+    let computerChoise = getComputerChoice();
+    winner(humanChoise, computerChoise);
+});
+
+
+
+const girlDoubleClick = document.querySelector(".girl1");
+girlDoubleClick.addEventListener("dblclick", () => {
+    const image = document.querySelector('.imgg');
+    image.src = './alex/girlN1.png';
+});
 
 
