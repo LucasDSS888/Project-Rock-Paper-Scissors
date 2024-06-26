@@ -1,8 +1,48 @@
 let computerChoise;
 let humanChoise;
+let humanChoiseNumb = humanChoiseImgClick();
 
 
 // playGame();
+
+
+
+
+
+
+// getHumanChoice();
+
+
+
+
+function humanChoiseImgClick() {
+    
+    let num;
+
+    const choiseAP = document.querySelector(".card.alexP");
+    choiseAP.addEventListener("click", () => {
+        num = 2;
+        alert(num);
+    });
+    
+    const choiseAR = document.querySelector(".card.alexR");
+    choiseAR.addEventListener("click", () => {
+        num = 1;
+        alert(num);
+    });
+
+    const choiseAS = document.querySelector(".card.alexS");
+    choiseAS.addEventListener("click", () => {
+        num = 3;
+        alert(num);
+    });
+
+    return num;
+
+}
+
+alert(humanChoiseNumb);
+
 
 
 
@@ -19,8 +59,8 @@ function playGame(){
     
     
     function playRound(humanChoise, computerChoise) {
-        computerChoise = getComputerChoice();
         humanChoise = getHumanChoice();
+        computerChoise = getComputerChoice();
         if (humanChoise != 'Invalid value') {
             if(computerChoise == 'rock' && humanChoise == 'scissors') {
                 computerScore++;
@@ -65,28 +105,34 @@ function getComputerChoice() {
     
     if (randomnumber <= 0.33) {
         choise = paper;
+        const image = document.querySelector('.imgg');
+        image.src = './alex/girlP.png';
     }else if (randomnumber >= 0.33 && randomnumber <= 0.66) {
         choise = scissors;
+        const image = document.querySelector('.imgg');
+        image.src = './alex/girlS.png';
     }else {
         choise = rock;
+        const image = document.querySelector('.imgg');
+        image.src = './alex/girlR.png';
     }
 
     return choise;
 }
 
 function getHumanChoice() {
-    let humanChoiseNumb = parseInt(prompt("[1]rock [2]paper [3]scissors"));
+
     let humanChoise;
 
     if (humanChoiseNumb == 1) {
         humanChoise = 'rock';
+        alert('aeee');
     }else if(humanChoiseNumb == 2) {
         humanChoise = 'paper';
     }else if(humanChoiseNumb == 3) {
         humanChoise = 'scissors';
     }else {
-        alert('Invalid value');
-        humanChoise = 'Invalid value';
+          alert('aff')
     }
     return humanChoise;
 }
