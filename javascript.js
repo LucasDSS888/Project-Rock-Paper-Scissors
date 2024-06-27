@@ -40,6 +40,8 @@ function winner(humanChoise, computerChoise) {
         }
     }
 
+
+
 function getComputerChoice() {
     let rock = 'rock';
     let paper = 'paper';
@@ -64,6 +66,19 @@ function getComputerChoice() {
     return choise;
 }
 
+function score(win) {
+    if(win == 'human') {
+        humanScore += 1;
+    }if(win == 'computer') {
+        computerScore += 1;
+    }
+    const hS = document.querySelector('span.hS');
+    hS.textContent = '' + humanScore;
+
+    const cS = document.querySelector('span.cS');
+    cS.textContent = '' + computerScore;
+
+}
 
 
 const choiseAP = document.querySelector(".card.alexP");
@@ -71,6 +86,7 @@ choiseAP.addEventListener("click", () => {
     humanChoise = 'paper';
     let computerChoise = getComputerChoice();
     winner(humanChoise, computerChoise);
+    score(winner(humanChoise, computerChoise));
 });
     
 const choiseAR = document.querySelector(".card.alexR");

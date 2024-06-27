@@ -155,3 +155,9 @@ body {
 .computer-choise {
     margin-left: 100px;
 }
+
+
+.score {
+    display: flex;
+    justify-content: space-around;
+}
